@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+
+    table
+        tr
+            th Category Name
+            th Description
+            th Image
+
+        each category in category_list
+            tr
+                td 
+                    a(href=category.url) #{category.name}
+                td  #{category.description} 
+                td  
+                    img(src=category.image alt="category example" style='width:100px; height:100px; border: 1px solid black;')
+
+        else
+            li There are no categories.

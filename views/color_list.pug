@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1= title
+
+    table
+        tr
+            th Color
+            th Image
+
+        each color in color_list
+            tr
+                td 
+                    a(href=color.url) #{color.name}
+                td 
+                    img(src=color.image alt="color example" style='width:100px; height:100px; border: 1px solid black;')
+
+        else
+            li There are no colors.

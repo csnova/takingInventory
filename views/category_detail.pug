@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+    div(class="fullPage")
+
+        div(class="headerImage")
+
+            img(src=category.image alt="category example" style='width:200px; height:200px; border: 1px solid black;')
+
+        div(class="container")
+
+            h1 Category: #{category.name}
+
+            p <em>Description:</em> #{category.description} 
+
+            div(style='margin-left:20px;margin-top:20px')
+
+                h4 Products in this Category
+
+            table
+                tr
+                    th Product Name
+                    th Price
+
+                each bag in category_bags
+                    tr
+                        td 
+                            a(href=bag.url) #{bag.name} Bean Bag Chair
+                        td  #{bag.price} 
+
+
+                else
+                    p No products in this category

@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/stylesheets/style.css')
+  body
+    div(class='sidebar' )
+      block sidebar
+        ul(class='sidebar-nav')
+          li
+            a(href='/inventory') Home
+          li
+            a(href='/inventory/bags') All Products
+          li
+            a(href='/inventory/categories') Categories
+          li
+            a(href='/inventory/fabrics') Fabrics
+          li
+            a(href='/inventory/colors') Colors
+          li
+            hr
+          li
+            a(href='/inventory/category/create') Create new category
+          li
+            a(href='/inventory/fabric/create') Create new fabric
+          li
+            a(href='/inventory/color/create') Create new color
+          li
+            a(href='/inventory/bag/create') Create new product
+
+    div(class='content')
+      block content
+

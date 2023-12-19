@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1= title
+
+    table
+        tr
+            th Product Name
+            th Price
+            th Quantity
+            th Category
+            th Fabric
+            th Color
+
+        each bag in bag_list
+            tr
+                td 
+                    a(href=bag.url) #{bag.name}
+                td  $#{bag.price} 
+                td #{bag.stock}
+                td   
+                    a(href=bag.category.url) #{bag.category.name}
+                td 
+                    a(href=bag.fabric.url) #{bag.fabric.name}
+                td 
+                    a(href=bag.color.url) #{bag.color.name}
+
+        else
+            li There are no bags.

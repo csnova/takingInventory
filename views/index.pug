@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Mushy Plushy], inventory tracker for our amazing bean bag chairs!
+
+  h1 Inventory Totals
+
+  p The current inventory has the following record counts:
+
+  table 
+    tr 
+      th Section
+      th Quantity
+
+    tr
+      td 
+        a(href="/inventory/bags") All Product
+      td !{bag_count}
+
+    tr
+      td 
+        a(href="/inventory/categories") Categories
+      td !{category_count}
+
+    tr
+      td 
+        a(href="/inventory/fabrics") Fabrics
+      td !{fabric_count}
+
+    tr
+      td 
+        a(href="/inventory/colors") Colors
+      td !{color_count}

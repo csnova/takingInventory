@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+    div(class="fullPage")
+
+        div(class="headerImage")
+
+            img(src=color.image alt="color example" style='width:200px; height:200px; border: 1px solid black;')
+
+        div(class="container")
+
+            h1 Color: #{color.name}
+
+            div(style='margin-left:20px;margin-top:20px')
+
+                h4 Products with this color
+
+            table
+                tr
+                    th Product Name
+                    th Price
+
+                each bag in color_bags
+                    tr
+                        td 
+                            a(href=bag.url) #{bag.name} Bean Bag Chair
+                        td  #{bag.price} 
+
+
+                else
+                    p No products are made with this color

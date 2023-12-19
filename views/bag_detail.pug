@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+    h1 Product: #{bag.name} Bean Bag Chair
+
+    div(class="contentBox")
+
+        div(class="textBox")
+
+            ul  
+                li Price: $#{bag.price} 
+                li Quantity: #{bag.stock} 
+
+        div(class="imageBox")
+
+            div(class="categoryImageBox")
+                img(src=bag.category.image alt="category example" style='width:200px; height:200px; border: 1px solid black;')
+                p(class="categoryImageText") Category: 
+                    a(href=bag.category.url) #{bag.category.name}
+
+            div(class="fabricImageBox")
+                img(src=bag.fabric.image alt="fabric example" style='width:200px; height:200px; border: 1px solid black;')
+                p(class="fabricImageText") Fabric: 
+                    a(href=bag.fabric.url) #{bag.fabric.name}
+
+            div(class="colorImageBox")
+                img(src=bag.color.image alt="color example" style='width:200px; height:200px; border: 1px solid black;')
+                p(class="colorImageText") Color: 
+                    a(href=bag.color.url) #{bag.color.name}

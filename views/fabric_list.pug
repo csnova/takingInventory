@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+
+    table
+        tr
+            th Fabric Name
+            th Description
+            th Image
+
+        each fabric in fabric_list
+            tr
+                td 
+                    a(href=fabric.url) #{fabric.name}
+                td  #{fabric.description} 
+                td  
+                    img(src=fabric.image alt="fabric example" style='width:100px; height:100px; border: 1px solid black;')
+
+        else
+            li There are no Fabric.
