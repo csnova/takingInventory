@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+    h1 #{title}: #{color.name}
+
+    if color_bags.length
+
+        p #[strong Delete the following products before attempting to delete this color.]
+        div(style='margin-left:20px;margin-top:20px')
+            h4 Bags
+            dl
+                each bag in color_bags
+                    dt
+                        a(href=bag.url) #{bag.name}
+    else
+        p Do you really want to delete this Color?
+
+        form(method='POST')
+            div.form-group
+                input#colorid.form-control(type='hidden' name='colorid', value=color._id )
+
+            button.btn.btn-primary(type='submit') Delete

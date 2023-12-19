@@ -13,5 +13,12 @@ CategorySchema.virtual("url").get(function () {
   return `/inventory/category/${this._id}`;
 });
 
+// Virtual for category image location
+CategorySchema.virtual("imageLocation").get(function () {
+  let imageLocation = this.image;
+  imageLocation = imageLocation.slice(8);
+  return imageLocation;
+});
+
 // Export model
 module.exports = mongoose.model("Category", CategorySchema);

@@ -98,3 +98,9 @@ table th {
 .container {
   flex: 1;
 }
+
+label,
+input,
+select {
+  margin: 5px;
+}

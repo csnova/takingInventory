@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+    h1 #{title}: #{bag.name}
+
+        p Do you really want to delete this Product?
+
+        form(method='POST')
+            div.form-group
+                input#bagid.form-control(type='hidden' name='bagid', value=bag._id )
+
+            button.btn.btn-primary(type='submit') Delete

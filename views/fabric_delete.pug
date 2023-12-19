@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+    h1 #{title}: #{fabric.name}
+
+    if fabric_bags.length
+
+        p #[strong Delete the following products before attempting to delete this fabric.]
+        div(style='margin-left:20px;margin-top:20px')
+            h4 Bags
+            dl
+                each bag in fabric_bags
+                    dt
+                        a(href=bag.url) #{bag.name}
+    else
+        p Do you really want to delete this Fabric?
+
+        form(method='POST')
+            div.form-group
+                input#fabricid.form-control(type='hidden' name='fabricid', value=fabric._id )
+
+            button.btn.btn-primary(type='submit') Delete
